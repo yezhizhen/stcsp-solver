@@ -91,7 +91,8 @@ def adv2():
 					mydict[source][action1].add(action2)
 				else:
 					mydict[source][action1] = {action2}
-				
+	
+	yesglobal = True
 		
 	for source,v in mydict.items():
 		yes = False
@@ -100,10 +101,11 @@ def adv2():
 				yes = True
 		if not yes:
 			print("At node {0}, there is no viable simultaneous action".format(source))
-			
+			yesglobal = False
 	print(len(all_nodes), "nodes after pruning")	
 	
-	
+	if yesglobal:
+		print("This is a adversarial2 solution")
 	
 
 if __name__ == '__main__':
